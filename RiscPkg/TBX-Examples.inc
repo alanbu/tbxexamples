@@ -1,3 +1,2 @@
-!!ReadMe
-RiscPkg/*
-Apps/Development/TbxExamples/*
+RiscPkg.*
+Apps.Development.TbxExamples.*

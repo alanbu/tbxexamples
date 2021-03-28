@@ -1,19 +1,31 @@
-VERSION = 0.6-2
+VERSION = 7.6-1
 PACKAGES = \
  TBX-Examples_$(VERSION)
-INSTALL_TO=Temp/Apps/Development
+INSTALL_TO=Temp.Apps.Development
 
 all: pkg
 
 
 pkg:
+	CleanAll
 	rm -rf Temp
-	mkdir -p Temp/RiscPkg
-	mkdir -p $(INSTALL_TO)
-	svn export .  $(INSTALL_TO)/TbxExamples
-	rm -f $(INSTALL_TO)/TbxExamples/RiscPkg/Control
-	rm -f $(INSTALL_TO)/TbxExamples/RiscPkg/Rules
-	rm -f $(INSTALL_TO)/TbxExamples/RiscPkg/TBX-Examples.inc
+	CDir Temp
+	CDir Temp.RiscPkg
+	copy RiscPkg.Copyright Temp.RiscPkg.Copyright F~C
+	CDir Temp.Apps
+	CDir $(INSTALL_TO)
+	CDir $(INSTALL_TO).TbxExamples
+	copy !Graphics  $(INSTALL_TO).TbxExamples.!Graphics RF~C
+	copy !IconView  $(INSTALL_TO).TbxExamples.!IconView RF~C
+	copy !Reverse  $(INSTALL_TO).TbxExamples.!Reverse RF~C
+	copy !StopWatch  $(INSTALL_TO).TbxExamples.!StopWatch RF~C
+	copy !TbxDocEx  $(INSTALL_TO).TbxExamples.!TbxDocEx RF~C
+	copy !TbxMin  $(INSTALL_TO).TbxExamples.!TbxMin RF~C
+	copy !Graphics  $(INSTALL_TO).TbxExamples.!Graphics RF~C
+	copy !!ReadMe $(INSTALL_TO).TbxExamples.!!ReadMe F~C
+	copy MakeAll $(INSTALL_TO).TbxExamples.MakeAll F~C
+	copy CleanAll $(INSTALL_TO).TbxExamples.CleanAll F~C
+	copy LICENSE $(INSTALL_TO).TbxExamples.LICENSE F~C
 	make -C Temp -f ../RiscPkg/Rules $(PACKAGES)
 	rm -rf Temp
 
@@ -23,6 +35,6 @@ $(PACKAGES): %:
 	rm -f ../RiscPkg/$@
 	set StoreSuffix <UnixEnv$$zip$$sfix>
 	set UnixEnv$$zip$$sfix \"\"
-	zip -r ../RiscPkg/$@ * -i@../RiscPkg/$(firstword $(subst _, ,$@)).inc
+	zip -r ^.RiscPkg.$(subst .,/,$@) * -i@^.RiscPkg.$(firstword $(subst _, ,$@))/inc
 	set UnixEnv$$zip$$sfix <StoreSuffix>
 	unset StoreSuffix
