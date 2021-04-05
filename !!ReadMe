@@ -16,3 +16,4 @@ The examples are:
 !IconView - A simple application showing how to create a "filer-like" view
 !TbxDocEx - Shows a document type application
 !Graphics - Shows use of OffsetGraphics class to draw shapes, text and images
+!TbxClip - Shows how to use the RISC OS global clipboard

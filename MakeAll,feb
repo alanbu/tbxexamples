@@ -8,3 +8,5 @@ make -C !Reverse/src
 make -C !StopWatch/src
 make -C !TbxDocEx/src
 make -C !TbxMin/src
+make -C !TbxClip/src
+

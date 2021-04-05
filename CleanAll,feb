@@ -8,3 +8,4 @@ make -C !Reverse/src clean
 make -C !StopWatch/src clean
 make -C !TbxDocEx/src clean
 make -C !TbxMin/src clean
+make -C !TbxClip/src clean

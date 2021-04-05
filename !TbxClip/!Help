@@ -1,0 +1,30 @@
+This example shows how to use TBX with the RISC OS global clipboard.
+
+Run the application and then press select on the iconbar icon to show a window.
+You can show multiple copies of the window by repeating this.
+
+Pressing select in a window will give it the focus.
+
+The window consists of three areas from which you can copy and paste.
+Pressing select on one area will highlight it with a red box and make it the
+target for a copy or paste operation.
+
+The top area will copy text to the clipboard and paste the first 64 characters
+of any text in the clipboard to it.
+
+The middle area allows the copying and pasting of a sprite. It stores the whole
+sprite, but only the bottom left corner is shown if the sprite is larger than
+the area.
+
+The bottom area allows pasting of text. When copying it will add the text and 
+a simple sprite version of the text to the clipboard.
+
+The buttons at the bottom are:
+
+Copy - copy the selected area to the clipboard
+Paste - paste the current value of the clipboard to the selected area (if the
+clipboard contains the correct format).
+Check - Check the clipboard to see if it currently contains text or sprite data.
+
+Note: as clipboard support uses the standard tbx loader methods, you can also
+update any of the areas by dragging data of the appropriate type to them.
