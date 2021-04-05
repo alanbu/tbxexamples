@@ -1,9 +1,10 @@
 Source: TBX
-Version: 0.7-2
+Version: 0.7.6-1
 Section: Development
 Priority: Optional
 Maintainer: Alan Buckley <alan_baa@hotmail.com>
 Standards-Version: 0.4.0
+Environment: arm
 Licence: Free
 Environment: arm
 Description: Example programs for the TBX C++ library.
