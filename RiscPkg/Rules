@@ -1,4 +1,4 @@
-VERSION = 7.6-1
+VERSION = 0.7.6-1
 PACKAGES = \
  TBX-Examples_$(VERSION)
 INSTALL_TO=Temp.Apps.Development
@@ -22,6 +22,7 @@ pkg:
 	copy !TbxDocEx  $(INSTALL_TO).TbxExamples.!TbxDocEx RF~C
 	copy !TbxMin  $(INSTALL_TO).TbxExamples.!TbxMin RF~C
 	copy !Graphics  $(INSTALL_TO).TbxExamples.!Graphics RF~C
+	copy !TbxClip  $(INSTALL_TO).TbxExamples.!TbxClip RF~C
 	copy !!ReadMe $(INSTALL_TO).TbxExamples.!!ReadMe F~C
 	copy MakeAll $(INSTALL_TO).TbxExamples.MakeAll F~C
 	copy CleanAll $(INSTALL_TO).TbxExamples.CleanAll F~C

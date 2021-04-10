@@ -6,7 +6,6 @@ Maintainer: Alan Buckley <alan_baa@hotmail.com>
 Standards-Version: 0.4.0
 Environment: arm
 Licence: Free
-Environment: arm
 Description: Example programs for the TBX C++ library.
  This package installs a TbxExamples folder that contains various examples
  of the use of the TBX C++ library.
